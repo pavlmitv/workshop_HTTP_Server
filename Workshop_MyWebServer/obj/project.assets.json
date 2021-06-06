@@ -1,11 +1,30 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {}
+    ".NETCoreApp,Version=v3.1": {
+      "MyWebServer.Server/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/MyWebServer.Server.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/MyWebServer.Server.dll": {}
+        }
+      }
+    }
   },
-  "libraries": {},
+  "libraries": {
+    "MyWebServer.Server/1.0.0": {
+      "type": "project",
+      "path": "../MyWebServer.Server/MyWebServer.Server.csproj",
+      "msbuildProject": "../MyWebServer.Server/MyWebServer.Server.csproj"
+    }
+  },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": []
+    ".NETCoreApp,Version=v3.1": [
+      "MyWebServer.Server >= 1.0.0"
+    ]
   },
   "packageFolders": {
     "C:\\Users\\Pavel\\.nuget\\packages\\": {},
@@ -14,11 +33,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\Workshop_MyWebServer\\Workshop_MyWebServer\\Workshop_MyWebServer.csproj",
+      "projectUniqueName": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\Workshop_MyWebServer\\Workshop_MyWebServer.csproj",
       "projectName": "Workshop_MyWebServer",
-      "projectPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\Workshop_MyWebServer\\Workshop_MyWebServer\\Workshop_MyWebServer.csproj",
+      "projectPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\Workshop_MyWebServer\\Workshop_MyWebServer.csproj",
       "packagesPath": "C:\\Users\\Pavel\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\Workshop_MyWebServer\\Workshop_MyWebServer\\obj\\",
+      "outputPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\Workshop_MyWebServer\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -37,7 +56,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "targetAlias": "netcoreapp3.1",
-          "projectReferences": {}
+          "projectReferences": {
+            "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\MyWebServer.Server\\MyWebServer.Server.csproj": {
+              "projectPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\MyWebServer.Server\\MyWebServer.Server.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

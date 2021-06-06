@@ -1,0 +1,16 @@
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.exe
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.deps.json
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.runtimeconfig.json
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.runtimeconfig.dev.json
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.dll
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\Workshop_MyWebServer.pdb
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.csprojAssemblyReference.cache
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.AssemblyInfoInputs.cache
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.AssemblyInfo.cs
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.csproj.CoreCompileInputs.cache
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.dll
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.pdb
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.genruntimeconfig.cache
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\MyWebServer.Server.dll
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\netcoreapp3.1\MyWebServer.Server.pdb
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\netcoreapp3.1\Workshop_MyWebServer.csproj.CopyComplete

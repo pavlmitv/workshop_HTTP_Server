@@ -1,0 +1,36 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Workshop_MyWebServer/1.0.0": {
+        "dependencies": {
+          "MyWebServer.Server": "1.0.0"
+        },
+        "runtime": {
+          "Workshop_MyWebServer.dll": {}
+        }
+      },
+      "MyWebServer.Server/1.0.0": {
+        "runtime": {
+          "MyWebServer.Server.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Workshop_MyWebServer/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "MyWebServer.Server/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

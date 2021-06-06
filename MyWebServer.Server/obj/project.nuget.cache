@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "IJABdlguyPEJ957n9cy0+g1tYSvCR8HsKZK1WhzXbQmo7mE5BvmfWTZreYg37yPePKQoKhOmmzE+kSQGlUlL/Q==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\MyWebServer.Server\\MyWebServer.Server.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
