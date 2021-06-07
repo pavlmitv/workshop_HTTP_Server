@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWebServer.Server.Http;
+using System;
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
@@ -35,10 +36,11 @@ namespace MyWebServer.Server
 
                 //разбиваме stream-a на части. Така ако има много голям request, който може да задръсти паметта, няма да бъде приет. Може да сложим условие за ограничение
 
-                var request = await this.ReadRequest(networkStream);
-                Console.WriteLine(request);
+                var requestText = await this.ReadRequest(networkStream);
+                Console.WriteLine(requestText);
                 //задаваме response и header-и в него (content length, type, тн.; (търси Response Message Example в нета)); трябва да се заяви дължина на съдържанието и да се заяви, че е текст UTF-8 формат 
 
+                var request = HttpRequest.Parse(requestText);
                 await WriteResponse(networkStream);
 
                 connection.Close();
@@ -76,7 +78,7 @@ Content-Type: text/html; charset=UTF-8
 {content}";
 
             var responseBytes = Encoding.UTF8.GetBytes(response);
-            await networkStream.WriteAsync(responseBytes, 0, responseBytes.Length);
+            await networkStream.WriteAsync(responseBytes, 0, responseBytes.Length);     //TODO: WriteAsync  - ValueTask vs Task?
         }
     }
 }
