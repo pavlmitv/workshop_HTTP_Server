@@ -50,7 +50,7 @@ namespace MyWebServer.Server.Http
                     break;
                 }
                 var indexOfSemicolumns = headerLine.IndexOf(":");
-                if (indexOfSemicolumns<0)
+                if (indexOfSemicolumns < 0)
                 {
                     throw new InvalidOperationException("Request isn't valid");
                 }
