@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MyWebServer.Server.Common;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,7 +7,21 @@ namespace MyWebServer.Server.Http
 {
     public class HttpHeader
     {
-        public string Name { get; set; }    //TODO: init?
-        public string Value { get;  set; }   //TODO: init?
+        public HttpHeader(string name, string value)
+        {
+            Guard.AgainstNull(name, nameof(name));
+            Guard.AgainstNull(value, nameof(value));
+
+            this.Name = name;
+            this.Value = value;
+        }
+
+        public string Name { get; init; }    
+        public string Value { get; init; }
+
+        public override string ToString()
+        {
+            return $"{this.Name}:{this.Value}";
+        }
     }
 }

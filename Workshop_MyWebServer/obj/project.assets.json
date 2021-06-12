@@ -1,10 +1,10 @@
 {
   "version": 3,
   "targets": {
-    ".NETCoreApp,Version=v3.1": {
+    "net5.0": {
       "MyWebServer.Server/1.0.0": {
         "type": "project",
-        "framework": ".NETStandard,Version=v2.0",
+        "framework": ".NETCoreApp,Version=v5.0",
         "compile": {
           "bin/placeholder/MyWebServer.Server.dll": {}
         },
@@ -22,7 +22,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    ".NETCoreApp,Version=v3.1": [
+    "net5.0": [
       "MyWebServer.Server >= 1.0.0"
     ]
   },
@@ -47,15 +47,15 @@
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "netcoreapp3.1"
+        "net5.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "netcoreapp3.1": {
-          "targetAlias": "netcoreapp3.1",
+        "net5.0": {
+          "targetAlias": "net5.0",
           "projectReferences": {
             "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\MyWebServer.Server\\MyWebServer.Server.csproj": {
               "projectPath": "C:\\Users\\Pavel\\source\\repos\\C#_WebBasics_&_ASP.NETCore\\workshop_HTTP_Server\\MyWebServer.Server\\MyWebServer.Server.csproj"
@@ -70,8 +70,8 @@
       }
     },
     "frameworks": {
-      "netcoreapp3.1": {
-        "targetAlias": "netcoreapp3.1",
+      "net5.0": {
+        "targetAlias": "net5.0",
         "imports": [
           "net461",
           "net462",

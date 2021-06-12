@@ -54,13 +54,10 @@ namespace MyWebServer.Server.Http
                 {
                     throw new InvalidOperationException("Request isn't valid");
                 }
+                var headerName = headerLine.Substring(0, indexOfSemicolumns);
+                var headerValue = headerLine.Substring(indexOfSemicolumns + 1).Trim();
 
-                var header = new HttpHeader
-                {
-                    Name = headerLine.Substring(0, indexOfSemicolumns),
-                    Value = headerLine.Substring(indexOfSemicolumns + 1).Trim()
-                };
-                headerCollection.Add(header);
+                headerCollection.Add(headerName, headerValue);
             }
 
             return headerCollection;
