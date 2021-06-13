@@ -10,7 +10,8 @@ namespace MyWebServer.Server.Http
 
         private const string NewLine = "\r\n";
         public HttpMethod Method { get; private set; }
-        public string Url { get; private set; }
+        public string Path { get; private set; }
+        public Dictionary<string, string> Query { get; private set; }   //query strings ще ги пазим в речник
         public HttpHeaderCollection Headers { get; private set; }
         public string Body { get; private set; }
 
@@ -24,6 +25,8 @@ namespace MyWebServer.Server.Http
 
             var url = startLine[1];
 
+            var (path, query) = ParseUrl(url);      //tuple 
+
             var headers = ParseHttpHeaders(lines.Skip(1));
 
             var bodyLines = lines.Skip(headers.Count + 2).ToArray();
@@ -33,11 +36,14 @@ namespace MyWebServer.Server.Http
             return new HttpRequest
             {
                 Method = method,
-                Url = url,
+                Path = path,
+                Query = query,
                 Headers = headers,
                 Body = body,
             };
         }
+
+
 
         private static HttpHeaderCollection ParseHttpHeaders(IEnumerable<string> headerLines)
         {
@@ -50,7 +56,7 @@ namespace MyWebServer.Server.Http
                     break;
                 }
                 var headerParts = headerLine.Split(":", 2);
-                if (headerParts.Length!=2)
+                if (headerParts.Length != 2)
                 {
                     throw new InvalidOperationException("Request isn't valid");
                 }
@@ -72,7 +78,27 @@ namespace MyWebServer.Server.Http
                 "PUT" => HttpMethod.Put,
                 _ => throw new InvalidOperationException($"Method {method} is not supported.")
             };
-     
+
+        //пр. за query string: /Cats?name=Ivan&Age=5
+        private static (string, Dictionary<string, string>) ParseUrl(string url)    //tuple
+        {
+            var urlParts = url.Split("?");
+            var path = urlParts[0];
+            var query = urlParts.Length > 1
+                ? ParseQuery(urlParts[1])
+                : new Dictionary<string, string>();
+
+            return (path, query);
+        }
+        private static Dictionary<string, string> ParseQuery(string queryString)    //tuple
+        {
+            return queryString
+                    .Split("&")
+                    .Select(part => part.Split("="))
+                    .Where(part => part.Length == 2)
+                    .ToDictionary(part => part[0], part => part[1]);
+
+        }
         //private static string[] GetStartLine (string request)
         //{
 

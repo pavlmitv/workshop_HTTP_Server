@@ -26,46 +26,32 @@ namespace MyWebServer.Server.Routing
 
              
         }
-        public IRoutingTable Map(string url, HttpMethod method, HttpResponse response)
+        public IRoutingTable Map(HttpMethod method, string path, HttpResponse response)
         {
-            switch (method)
-            {
-                case HttpMethod.Get:
-                  return  this.MapGet(url, response);
-                    break;
-                case HttpMethod.Post:
-                    break;
-                case HttpMethod.Put:
-                    break;
-                case HttpMethod.Delete:
-                    break;
-                default:
-                    break;
-            }
-            throw new InvalidOperationException($"Method {method} is not supported");
-        }
-
-        public IRoutingTable MapGet(string url, HttpResponse response)
-        {
-            Guard.AgainstNull(url, nameof(url));
+            Guard.AgainstNull(path, nameof(path));
             Guard.AgainstNull(response, nameof(response));
 
-            this.routes[HttpMethod.Get][url] = response;
+            this.routes[method][path] = response;
 
             return this;    //начина, за да върнем RoutingTable; така се връща мапването на url-a към response-a
         }
 
+        public IRoutingTable MapGet(string path, HttpResponse response)
+            => Map(HttpMethod.Get, path, response);
+        public IRoutingTable MapPost(string path, HttpResponse response)
+    => Map(HttpMethod.Post, path, response);
+
         public HttpResponse MatchRequest (HttpRequest request)
         {
             var requestMethod = request.Method;
-            var requestUrl = request.Url;
+            var requestPath = request.Path;
 
-            if (!this.routes.ContainsKey(requestMethod) || !this.routes[requestMethod].ContainsKey(requestUrl))
+            if (!this.routes.ContainsKey(requestMethod) || !this.routes[requestMethod].ContainsKey(requestPath))
             {
                 return new NotFoundResponse();
             }
 
-            return this.routes[requestMethod][requestUrl];
+            return this.routes[requestMethod][requestPath];
         }
     }
 }
