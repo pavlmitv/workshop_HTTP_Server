@@ -80,7 +80,7 @@ namespace MyWebServer.Server.Http
             };
 
         //пр. за query string: /Cats?name=Ivan&Age=5
-        private static (string, Dictionary<string, string>) ParseUrl(string url)    //tuple
+        private static (string, Dictionary<string, string>) ParseUrl(string url)    //tuple --> едновременно можем да върнем 2 променливи от метода, вместо да правим клас и да използваме property-тата му; 
         {
             var urlParts = url.Split("?");
             var path = urlParts[0];
@@ -90,6 +90,9 @@ namespace MyWebServer.Server.Http
 
             return (path, query);
         }
+
+        //[0] -> /Cats
+        //[1] -> name=Ivan&Age=5
         private static Dictionary<string, string> ParseQuery(string queryString)    //tuple
         {
             return queryString
