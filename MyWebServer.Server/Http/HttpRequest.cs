@@ -10,21 +10,21 @@ namespace MyWebServer.Server.Http
 
         private const string NewLine = "\r\n";
         public HttpMethod Method { get; private set; }
-        public string Path { get; private set; }
+        public string Url { get; private set; }
         public HttpHeaderCollection Headers { get; private set; }
         public string Body { get; private set; }
 
         public static HttpRequest Parse(string request)
         {
-            string[] lines = request.Split(NewLine[0]);
+            string[] lines = request.Split(NewLine);
 
-            var startLine = lines.First().Split(" "[0]);
+            var startLine = lines.First().Split(" ");
 
             var method = ParseHttpMethod(startLine[0]);
 
             var url = startLine[1];
 
-            var headers = ParseHttpHeaderCollection(lines.Skip(1));
+            var headers = ParseHttpHeaders(lines.Skip(1));
 
             var bodyLines = lines.Skip(headers.Count + 2).ToArray();
 
@@ -33,13 +33,13 @@ namespace MyWebServer.Server.Http
             return new HttpRequest
             {
                 Method = method,
-                Path = url,
+                Url = url,
                 Headers = headers,
                 Body = body,
             };
         }
 
-        private static HttpHeaderCollection ParseHttpHeaderCollection(IEnumerable<string> headerLines)
+        private static HttpHeaderCollection ParseHttpHeaders(IEnumerable<string> headerLines)
         {
             var headerCollection = new HttpHeaderCollection();
 
@@ -49,13 +49,13 @@ namespace MyWebServer.Server.Http
                 {
                     break;
                 }
-                var indexOfSemicolumns = headerLine.IndexOf(":");
-                if (indexOfSemicolumns < 0)
+                var headerParts = headerLine.Split(":", 2);
+                if (headerParts.Length!=2)
                 {
                     throw new InvalidOperationException("Request isn't valid");
                 }
-                var headerName = headerLine.Substring(0, indexOfSemicolumns);
-                var headerValue = headerLine.Substring(indexOfSemicolumns + 1).Trim();
+                var headerName = headerParts[0]; ;
+                var headerValue = headerParts[1].Trim();
 
                 headerCollection.Add(headerName, headerValue);
             }
@@ -64,25 +64,15 @@ namespace MyWebServer.Server.Http
         }
 
         private static HttpMethod ParseHttpMethod(string method)
-        {
-            switch (method.ToUpper())
+            => method.ToUpper() switch
             {
-                case "GET":
-                    return HttpMethod.Get;
-                    break;
-                case "DELETE":
-                    return HttpMethod.Delete;
-                    break;
-                case "POST":
-                    return HttpMethod.Post;
-                    break;
-                case "PUT":
-                    return HttpMethod.Put;
-                    break;
-                default:
-                    throw new InvalidOperationException($"Method {method} is not supported.");
-            }
-        }
+                "GET" => HttpMethod.Get,
+                "DELETE" => HttpMethod.Delete,
+                "POST" => HttpMethod.Post,
+                "PUT" => HttpMethod.Put,
+                _ => throw new InvalidOperationException($"Method {method} is not supported.")
+            };
+     
         //private static string[] GetStartLine (string request)
         //{
 
