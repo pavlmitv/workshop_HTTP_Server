@@ -1,6 +1,7 @@
 ﻿using System.Threading.Tasks;
 using MyWebServer.Server;
 using MyWebServer.Server.Responses;
+using Workshop_MyWebServer.Controllers;
 
 namespace Workshop_MyWebServer
 {
@@ -13,21 +14,13 @@ namespace Workshop_MyWebServer
             // https://localhost:8090
 
             var server = new HttpServer(routs => routs
-                                        .MapGet("/", new TextResponse("Hello, you are in the homepage!"))
-                                        .MapGet("/Cats", request =>
-                                        {
-                                            var query = request.Query;
-                                            var catName = query.ContainsKey("Name")
-                                            ? query["Name"]
-                                            : "the cats";
-
-                                            var result = $"<h1>Hello from {catName}!</h1>";
-                                            return new HtmlResponse(result);
-                                        })
-                                        .MapGet("/Dogs", new HtmlResponse("<h1>Dogs page..</h1>")));
+                                        .MapGet("/", request=> new HomeController(request).Index())
+                                        .MapGet("/Cats", request => new AnimalsController(request).Cats())
+                                        .MapGet("/Dogs", request => new AnimalsController(request).Dogs()));
 
             await server.Start();
 
         }
     }
 }
+
