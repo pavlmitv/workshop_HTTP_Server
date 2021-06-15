@@ -1,10 +1,5 @@
 ﻿using MyWebServer.Server.Http;
 using MyWebServer.Server.Responses;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Workshop_MyWebServer.Controllers
 {
@@ -17,5 +12,7 @@ namespace Workshop_MyWebServer.Controllers
             => new TextResponse(text);
 
         protected HttpResponse Html(string html) => new HtmlResponse(html);
+        protected HttpResponse Redirect(string location) => new RedirectResponse(location);
+
     }
 }

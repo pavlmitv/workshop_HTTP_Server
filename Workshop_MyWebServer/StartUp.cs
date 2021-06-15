@@ -14,9 +14,10 @@ namespace Workshop_MyWebServer
             // https://localhost:8090
 
             var server = new HttpServer(routs => routs
-                                        .MapGet("/", request=> new HomeController(request).Index())
+                                        .MapGet("/", request => new HomeController(request).Index())
                                         .MapGet("/Cats", request => new AnimalsController(request).Cats())
-                                        .MapGet("/Dogs", request => new AnimalsController(request).Dogs()));
+                                        .MapGet("/Dogs", request => new AnimalsController(request).Dogs())
+                                        .MapGet("/Softuni", request => new HomeController(request).ToSoftUni()));
 
             await server.Start();
 

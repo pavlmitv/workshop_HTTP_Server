@@ -83,7 +83,7 @@ namespace MyWebServer.Server.Http
         private static (string, Dictionary<string, string>) ParseUrl(string url)    //tuple --> едновременно можем да върнем 2 променливи от метода, вместо да правим клас и да използваме property-тата му; 
         {
             var urlParts = url.Split("?");
-            var path = urlParts[0];
+            var path = urlParts[0].ToLower();
             var query = urlParts.Length > 1
                 ? ParseQuery(urlParts[1])
                 : new Dictionary<string, string>();

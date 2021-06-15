@@ -14,5 +14,7 @@ namespace Workshop_MyWebServer.Controllers
 
         public HttpResponse Index()
             => Text("Hello, you are in the homepage!");
+
+        public HttpResponse ToSoftUni() => Redirect("https://www.softuni.bg/");
     }
 }
