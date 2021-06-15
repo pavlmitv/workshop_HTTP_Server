@@ -3,6 +3,7 @@ using System;
 
 namespace MyWebServer.Server.Routing
 {
+    // преизползваме методи, главния е Map; това е стандартна практика
     public interface IRoutingTable
     {
         //методите не са void, а IRoutingTable, за да можем в StartUp класа, когато създаваме сървъра да мапнем няколко искаме пъти; ако са void ще може да се мапне само веднъж;
