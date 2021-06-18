@@ -14,5 +14,10 @@ namespace Workshop_MyWebServer.Controllers
         protected HttpResponse Html(string html) => new HtmlResponse(html);
         protected HttpResponse Redirect(string location) => new RedirectResponse(location);
 
+        protected HttpResponse View(string view)
+        {
+            return null;
+        }
+
     }
 }

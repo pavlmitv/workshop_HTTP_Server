@@ -22,9 +22,9 @@ namespace Workshop_MyWebServer.Controllers
         }
 
         public HttpResponse Dogs()
-            => Html("<h1>Dogs page..</h1>");
+            => View("/Views/Animals/Dogs.cshtml");
 
-        public HttpResponse List()
+        public HttpResponse List()  
         {
             return null;
         }
