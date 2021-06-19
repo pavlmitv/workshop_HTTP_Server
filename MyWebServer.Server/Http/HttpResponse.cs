@@ -12,13 +12,14 @@ namespace MyWebServer.Server.Http
             this.Headers.Add("Server", "My web server");
             this.Headers.Add("Date", $"{ DateTime.UtcNow:r}");
         }
-        public HttpStatusCode StatusCode { get; init; }  //TODO: init? --> с init можем да сетнем пропърти само при инициализация на обекта; пр:
-                                                         //var response = new Response {StatusCode = HttpStatusCode.OK}
-                                                         //response.StatusCode = HttpStatusCode.{another enum} -> не е възможно, защото StatusCode вече е зададено при иниц. на обекта
+        public HttpStatusCode StatusCode { get; protected set; }  
+          
 
         public HttpHeaderCollection Headers { get; } = new HttpHeaderCollection();
 
-        public string Content { get; init; }
+        public string Content { get; init; } //TODO: init? --> с init можем да сетнем пропърти само при инициализация на обекта; пр:
+                                             //var response = new Response {StatusCode = HttpStatusCode.OK}
+                                             //response.StatusCode = HttpStatusCode.{another enum} -> не е възможно, защото StatusCode вече е зададено при иниц. на обекта
 
         public override string ToString()
         {

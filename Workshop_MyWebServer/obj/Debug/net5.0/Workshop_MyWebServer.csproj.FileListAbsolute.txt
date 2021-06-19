@@ -17,3 +17,4 @@ C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Work
 C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\net5.0\ref\Workshop_MyWebServer.dll
 C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\net5.0\Workshop_MyWebServer.pdb
 C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\obj\Debug\net5.0\Workshop_MyWebServer.genruntimeconfig.cache
+C:\Users\Pavel\source\repos\C#_WebBasics_&_ASP.NETCore\workshop_HTTP_Server\Workshop_MyWebServer\bin\Debug\net5.0\Views\Animals\Dogs.cshtml
